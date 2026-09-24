@@ -1,0 +1,4 @@
+# Call notes may contain customer details. Never push them.
+notes/
+
+.DS_Store
