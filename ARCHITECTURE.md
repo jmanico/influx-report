@@ -30,6 +30,7 @@ Then type `/sales-call` and Claude walks you through the call.
  .claude/skills/sales-call/ ← the step-by-step call script
  knowledge/products.md      ← the 5 products and when to suggest each
  knowledge/stories.md       ← approved customer stories with links
+ knowledge/competitors.md   ← fair, sourced facts for when a customer names a competitor
         │
         ▼
  Claude asks the questions → you type answers →
@@ -46,6 +47,7 @@ Then type `/sales-call` and Claude walks you through the call.
 | `.claude/skills/sales-call/SKILL.md` | The call script: the 12 questions, then suggestion, stories and email. Running `/sales-call` starts it. | You |
 | `knowledge/products.md` | The product table from the requirements, plus any extra detail (pricing notes, limits, talking points). | You |
 | `knowledge/stories.md` | The only customer stories Claude may use: company, industry, what they did, headline result, link. | You |
+| `knowledge/competitors.md` | What to ask and say when a customer names another database: pain questions, InfluxData strengths, objection replies, a "Don't say" list, and switch stories. Every point has a link. | You |
 
 ### What goes in `CLAUDE.md`
 
@@ -86,6 +88,7 @@ There's also a fast path: the salesperson can paste a paragraph of notes (like t
 
 - **New customer story:** Add a row to `knowledge/stories.md`. Copy the link from the InfluxData [Customers](https://www.influxdata.com/customers/), [Partners](https://www.influxdata.com/partners/) or [Blog](https://www.influxdata.com/blog/) pages.
 - **Product change:** Edit `knowledge/products.md`.
+- **Competitor change:** Edit `knowledge/competitors.md`. Re-check each section every few months. Competitors change their products too.
 - **New or changed question:** Edit the skill file and `REQUIREMENTS.md` together.
 
 You can also ask Claude to do these edits for you, for example: *"Read the Seadrill customer page and add it to stories.md."*

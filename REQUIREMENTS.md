@@ -88,6 +88,23 @@ A few to start with:
 | [Vonage](https://www.influxdata.com/customer/vonage) | Communications | Monitors a global service with 99.999% uptime |
 | [Capital One](https://www.influxdata.com/customer/capital-one) | Finance | Keeps its systems visible and running |
 
+## When the customer names a competitor
+
+If the customer says they use, or are looking at, another database (for example TimescaleDB, Prometheus or Amazon Timestream), the tool helps the salesperson compete **on facts**:
+
+1. **Find the pain.** Suggest 1–2 questions that get the customer to say where their current product falls short. For example: *"How is it keeping up as your data grows?"* or *"How much of your team's time goes into running it?"*
+2. **Say what InfluxData does well.** Give 1–3 short talking points where InfluxData is strong for this customer's need.
+3. **Handle objections.** If the customer gives a reason to stay, give a short, factual reply the salesperson can say out loud.
+4. **Show a switch story.** If a story in `stories.md` is about a company that moved from that product, show it first.
+
+The facts come from `knowledge/competitors.md`: one section per competitor, with points taken from InfluxData's own comparison pages and blog, a link for each point, and the date it was checked.
+
+Rules:
+
+- **No FUD.** The tool never makes up weaknesses, and never says a competitor is failing, unsafe or going away. It never guesses a competitor's prices or plans. Wrong claims lose the customer's trust and can create legal risk.
+- **Only what's in the file.** If a competitor isn't in `competitors.md`, the tool says so and uses InfluxData's strengths and the pain questions instead.
+- **Still one product.** Naming a competitor doesn't change the "How to pick" steps. The tool still picks one InfluxData product.
+
 ## Example
 
 > A customer says: *"We run battery storage sites and collect sensor data. We don't want to manage servers, and our security team needs a private connection."*
@@ -102,3 +119,4 @@ A few to start with:
 - It's quick and simple enough to use while talking to a customer.
 - The questions are non-linear. The tool uses AI to decide, adaptively, which question to ask next.
 - The follow-up email is a draft. The salesperson always reviews it before sending.
+- Competitor talking points are fair and factual, with a link for each one. No FUD.

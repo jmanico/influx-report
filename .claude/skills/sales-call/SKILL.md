@@ -9,7 +9,7 @@ allowed-tools: Read
 
 Walk the salesperson through the call, one step at a time. Keep every message short enough to read while talking.
 
-Before you start, read `knowledge/products.md` and `knowledge/stories.md`.
+Before you start, read `knowledge/products.md`, `knowledge/stories.md` and `knowledge/competitors.md`.
 
 ## Fast path: pasted notes
 
@@ -70,6 +70,26 @@ Rules for this step:
 - Keep track of which questions are answered. Don't ask one twice.
 - If the salesperson types **go**, stop asking and move to Step 3.
 
+## Any time: the customer names a competitor
+
+If the customer says they use, or are looking at, another database or monitoring tool, look it up in `knowledge/competitors.md` (check the "Also called" names too). Then, in one short block:
+
+> **Competing with [product]**
+>
+> **Ask:** *[1–2 pain questions from the file, picked for this customer]*
+>
+> **Say:** *[1–3 strengths from the file that fit what the customer said]*
+>
+> **If they say "[objection]":** *[the short reply from the file]*, only if they raised it or it's likely
+
+Rules:
+
+- Use only what `competitors.md` says. Don't add weaknesses from your own knowledge.
+- Never say anything from the product's **Don't say** list.
+- If the product isn't in the file, say: *"[Product] isn't in competitors.md yet."* Then use the general pain questions at the top of the file.
+- If the file says InfluxDB can **work alongside** it, lead with that. Replacing isn't the only win.
+- Then go back to the questions. A competitor doesn't change the "How to pick" steps.
+
 ## Step 2: Recap
 
 In 2–4 bullets, sum up what you heard. Note any answer that is still missing and would change the pick.
@@ -88,15 +108,16 @@ Then, only if they apply:
 
 - **Worth asking:** questions whose answers would change the pick.
 - **Already using open-source InfluxDB or Telegraf:** say how the suggestion builds on what they have.
-- **Using another database:** one fair sentence on what InfluxData does well. Don't knock the other product.
+- **Using another database:** one fair sentence from `competitors.md` on what InfluxData does well for this customer. Don't knock the other product.
 
 ## Step 4: Share stories
 
 Pick 1–3 stories from `knowledge/stories.md`:
 
-1. Same industry first.
-2. Then the same kind of need (for example: IoT sensors, server monitoring, satellites, factory equipment).
-3. Prefer stories that use the product you suggested.
+1. If the customer named a competitor, a story in `competitors.md` under **Switch stories** for that product comes first. It must also be in `stories.md`.
+2. Then the same industry.
+3. Then the same kind of need (for example: IoT sensors, server monitoring, satellites, factory equipment).
+4. Prefer stories that use the product you suggested.
 
 Show 3 when 3 fit well, such as three stories from the customer's industry. Show fewer only when fewer fit.
 
@@ -115,6 +136,7 @@ Write a short email the salesperson can copy:
 - The suggestion and why, in plain words.
 - One or two of the stories, with links.
 - One clear next step (for example, a demo, a trial, or a call with their security team).
+- If the customer named a competitor, talk about what InfluxData does well. Don't criticize the other product in writing.
 - Under 150 words. Friendly and plain. No prices unless the salesperson asks, and no promises about discounts, dates or features.
 - Use placeholders like `[Customer name]` and `[Your name]` for anything you don't know.
 
