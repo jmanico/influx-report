@@ -62,7 +62,7 @@ A few short rules, in plain English:
 
 The skill is the call script, one step at a time:
 
-1. Ask the 12 questions from `REQUIREMENTS.md`, in order, a few at a time. Let the salesperson skip any question.
+1. Ask the 12 questions from `REQUIREMENTS.md`, a few at a time. Choose the next question adaptively, based on the answers so far. Let the salesperson skip any question.
 2. Name one product and give the reason in one or two sentences.
 3. Show 1–3 matching stories from `knowledge/stories.md`, each with a link.
 4. Write a short follow-up email the salesperson can copy.

@@ -23,9 +23,11 @@ Otherwise, start at Step 1.
 
 ## Step 1: Ask the questions
 
-Ask the questions in this order, **one group at a time**. Show the group, then wait for answers.
+The questions below are a **question bank, not a script**. Choose the next question each turn based on what the customer has said so far.
 
 Tell the salesperson once, at the start: *"Type the customer's answers in any form. Type **skip** to skip a question, or **go** to jump to the suggestion."*
+
+Start with question 1. After each answer, pick the **1–2 best questions to ask next** and show only those. Wait for answers, then choose again.
 
 ### About the project
 
@@ -54,10 +56,18 @@ Tell the salesperson once, at the start: *"Type the customer's answers in any fo
 11. Is there budget set aside for this project?
 12. Who is championing this project, and who else is involved in the decision to buy?
 
+How to pick the next question:
+
+1. **Skip what's answered.** If an answer already covers a question, even in passing, don't ask it.
+2. **Follow the customer.** If they bring up security, budget or a deadline, ask about that next. Come back to the rest later.
+3. **Ask what changes the pick first.** Before the pick is clear, put questions 8 and 9 ahead of timeline and budget. Ask 6 and 7 early if the answers so far point to a large workload or many machines.
+4. **Dig in when needed.** If an answer is vague or opens a new need, ask one short follow-up in your own words.
+5. **Stop when ready.** Once you can make a pick with the "How to pick" steps in `knowledge/products.md`, say so in one line and offer to move to the suggestion. Name any questions still worth asking.
+
 Rules for this step:
 
 - Accept short or messy answers. Don't ask the salesperson to rephrase.
-- If one answer covers a later question, don't ask that one again.
+- Keep track of which questions are answered. Don't ask one twice.
 - If the salesperson types **go**, stop asking and move to Step 3.
 
 ## Step 2: Recap
