@@ -1,10 +1,8 @@
 # Influx Sales Navigator: Requirements
 
-| | |
-|---|---|
-| **Status** | Draft v0.1, based on one customer interview |
-| **Date** | 2026-09-24 |
-| **Product sources** | influxdata.com product, customer, partner and blog pages, reviewed 2026-09-24 (see §10) |
+- **Status:** Draft v0.1, based on one customer interview
+- **Date:** 2026-09-24
+- **Product sources:** influxdata.com product, customer, partner and blog pages, reviewed 2026-09-24 (see §10)
 
 ---
 
@@ -15,7 +13,7 @@ Sales Navigator is an **internal tool for InfluxData sales staff**. It works as 
 ### 1.1 What the customer asked for (interview notes)
 
 | # | Statement | Where it's covered |
-|---|---|---|
+| --- | --- | --- |
 | I-1 | Internal tool: "sales navigator" | §2, NFR-SEC-1 |
 | I-2 | Sales runs it as the sales script | FR-SCRIPT |
 | I-3 | Used during a sales call **or** in email communication | FR-MODE |
@@ -30,7 +28,7 @@ Everything else in this document is **derived** from these six points and the so
 ## 2. Users and Context
 
 | Persona | Goal | When they use it |
-|---|---|---|
+| --- | --- | --- |
 | **Account Executive (AE)** (primary) | Qualify the prospect, land on the right product, and move the deal forward | Live discovery and qualification calls |
 | **Sales Development Rep (SDR)** | Run a consistent first conversation and hand off a qualified lead | First-touch calls and outbound email |
 | **Sales Engineer (SE)** | Check the technical fit and refine the recommendation | Technical deep-dive calls |
@@ -43,6 +41,7 @@ Everything else in this document is **derived** from these six points and the so
 ## 3. Scope
 
 ### 3.1 In scope (MVP)
+
 - A guided discovery script that captures the customer's use case and needs
 - A deterministic recommendation engine covering the products in §6
 - Customer-story matching from a curated library (§7)
@@ -51,6 +50,7 @@ Everything else in this document is **derived** from these six points and the so
 - An admin way to maintain product rules and the story library
 
 ### 3.2 Out of scope (MVP)
+
 - Customer-facing or self-serve use
 - Price quotes, discounting or order forms (the tool may *point to* pricing pages)
 - Automatic sending of email (the tool drafts; the rep sends)
@@ -66,7 +66,7 @@ Priority: **M** = Must (MVP), **S** = Should, **C** = Could.
 ### 4.1 Modes: FR-MODE
 
 | ID | Requirement | Pri |
-|---|---|---|
+| --- | --- | --- |
 | FR-MODE-1 | The tool offers a **Live Call** mode: one question at a time, with suggested talk tracks and a short read-aloud summary of the recommendation. | M |
 | FR-MODE-2 | The tool offers an **Email** mode: the rep pastes or types what the prospect wrote. The tool shows which discovery answers are still missing and produces a draft reply containing the recommendation and linked customer stories. | M |
 | FR-MODE-3 | The rep can switch modes in the middle of a session without losing answers already entered. | S |
@@ -74,7 +74,7 @@ Priority: **M** = Must (MVP), **S** = Should, **C** = Could.
 ### 4.2 Guided sales script: FR-SCRIPT
 
 | ID | Requirement | Pri |
-|---|---|---|
+| --- | --- | --- |
 | FR-SCRIPT-1 | The tool presents an ordered discovery script: **opener → use case → workload/scale → deployment and operations → security and compliance → data collection → timeline and budget → recommendation → next step**. | M |
 | FR-SCRIPT-2 | Each step shows a suggested question the rep can say out loud, plus the structured answer fields behind it. | M |
 | FR-SCRIPT-3 | The rep can skip any step. The recommendation still appears and marks which inputs were assumed or unknown. | M |
@@ -86,7 +86,7 @@ Priority: **M** = Must (MVP), **S** = Should, **C** = Could.
 The tool captures these inputs. Each one should be a structured field (pick-list, range or toggle) with an optional free-text note.
 
 | ID | Input | Example values | Pri |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | FR-INTAKE-1 | **Primary use case** (from the Customers page use-case filters) | IoT and sensor monitoring, IIoT, DevOps monitoring, infrastructure/application monitoring, network monitoring, real-time analytics, APM, Kubernetes monitoring, ML/anomaly detection, stream processing, metrics as a service, data historian replacement | M |
 | FR-INTAKE-2 | **Industry** (from the Customers page industry filters) | Technology, Energy, Manufacturing/Agriculture, Financial Services, Telecom, Healthcare, Aerospace/Space, Retail, Public Sector, Transportation, Gaming, Security, Education | M |
 | FR-INTAKE-3 | **Deployment preference** | Fully managed cloud / self-managed (on-premises or own cloud) / edge / AWS-native / undecided | M |
@@ -105,7 +105,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ### 4.4 Recommendation engine: FR-REC
 
 | ID | Requirement | Pri |
-|---|---|---|
+| --- | --- | --- |
 | FR-REC-1 | The tool produces **exactly one primary database recommendation**. It must not present a menu of options. | M |
 | FR-REC-2 | The tool produces **a data-collection recommendation** (none, Telegraf OSS or Telegraf Enterprise) whenever the customer has collection needs. This is separate from the database recommendation. | M |
 | FR-REC-3 | Each recommendation includes: product name, a 2–3 sentence rationale **quoting the customer's own inputs**, the product page link, and the top 2–3 deciding factors. | M |
@@ -119,7 +119,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ### 4.5 Customer stories: FR-STORY
 
 | ID | Requirement | Pri |
-|---|---|---|
+| --- | --- | --- |
 | FR-STORY-1 | For each recommendation, the tool suggests **1–3 customer stories**. They are ranked by how well they match on product, then use case, then industry, then scale. | M |
 | FR-STORY-2 | Each story card shows: company, industry, use case, product(s) used, one headline number (e.g. "1M points/sec", "$55M savings"), a one-line talk track, and a link to the source URL. | M |
 | FR-STORY-3 | Stories come only from the approved sources: `influxdata.com/customers/`, `/partners/` and `/blog/` (the "Use Cases" category). | M |
@@ -131,7 +131,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ### 4.6 Outputs: FR-OUT
 
 | ID | Requirement | Pri |
-|---|---|---|
+| --- | --- | --- |
 | FR-OUT-1 | **Call summary**: captured inputs, the recommendation with rationale, the stories referenced and agreed next steps. It can be copied as plain text or Markdown for CRM notes. | M |
 | FR-OUT-2 | **Follow-up email draft**: a personalized recap, the recommended product with a link, 1–2 story links and a proposed next step (trial, technical deep-dive, pricing conversation). The rep can edit it before copying. | M |
 | FR-OUT-3 | The tool suggests a **next step** based on the product. For example: Serverless → sign up (free tier, then credit on upgrade); Dedicated → technical scoping call; Telegraf Enterprise → free tier (≤20 configs / ≤100 agents) or pilot. | S |
@@ -140,7 +140,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ### 4.7 Administration: FR-ADMIN
 
 | ID | Requirement | Pri |
-|---|---|---|
+| --- | --- | --- |
 | FR-ADMIN-1 | An admin can add, edit and retire products, rules and talk tracks. | M |
 | FR-ADMIN-2 | An admin can add, edit, verify and retire customer stories, including tags and the source URL. | M |
 | FR-ADMIN-3 | The tool can suggest new or changed stories by checking the three source pages. Nothing goes live until a person approves it. | C |
@@ -151,7 +151,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ## 5. Non-Functional Requirements
 
 | ID | Requirement | Pri |
-|---|---|---|
+| --- | --- | --- |
 | NFR-SEC-1 | **Internal only.** Access requires company SSO. The tool is not reachable from the public internet without authentication. | M |
 | NFR-SEC-2 | Prospect data entered in a session is treated as confidential. The tool stores the minimum needed, deletes it after a set retention period, and never sends it to third parties without approval. | M |
 | NFR-SEC-3 | If any AI/LLM features are added (such as parsing a pasted email in FR-MODE-2), prospect text goes only to approved providers under a no-training agreement. Model output is shown as a draft for the rep to edit and is never sent automatically. | M |
@@ -172,7 +172,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ### 6.1 Catalog
 
 | Product | Deployment | Best fit (per source pages) | Key facts reps may cite |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **InfluxDB 3 Core** (OSS) | Self-managed, single node | Edge deployments, prototypes, smaller workloads | Open source (MIT/Apache 2) |
 | **InfluxDB 3 Enterprise** | Self-managed, multi-node | Production that needs high availability | HA, multi-node, read replicas, long-range compaction; "millions of writes/second, billions of series, sub-10ms queries" |
 | **InfluxDB Cloud Serverless** | Fully managed, multi-tenant | Smaller or variable workloads on shared infrastructure; cost-conscious buyers | Consumption pricing, free tier, $250 credit on upgrade, unlimited cardinality, SOC 2 Type II / ISO, AWS Marketplace |
@@ -184,7 +184,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ### 6.2 Database decision rules (evaluated in order; the first match wins)
 
 | # | If… | Recommend | Why not the runner-up (example) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | R1 | Customer wants **managed** AND needs any of: single-tenant isolation, private connectivity, a dedicated CSM, or a mission-critical / high-volume scaling workload | **Cloud Dedicated** | "Not Serverless: it's multi-tenant and has no private connectivity." |
 | R2 | Customer wants **managed** AND the workload is small, variable or early-stage AND consumption pricing is fine AND there's no R1 trigger | **Cloud Serverless** | "Not Dedicated yet: you can start on Serverless and move up when scale or isolation needs appear." |
 | R3 | Customer wants **self-managed** AND needs HA, multi-node, read replicas or production scale | **InfluxDB 3 Enterprise** | "Not Core: it's single-node with no HA." |
@@ -195,7 +195,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ### 6.3 Data-collection rules
 
 | # | If… | Recommend |
-|---|---|---|
+| --- | --- | --- |
 | C1 | Customer collects from infrastructure, containers, network gear or devices (MQTT, Modbus, OPC, Kafka, etc.) and has no agent standard | **Telegraf** (OSS) |
 | C2 | Customer runs or plans a **large Telegraf fleet** (the source page cites 1,000+ agents) **or** reports config drift, silent failures, lack of fleet visibility, multi-team RBAC needs, or a need for SLA-backed agent support | **Telegraf Enterprise** |
 | C3 | Fleet is ≤100 agents and ≤20 configs but the customer wants central management | **Telegraf Enterprise (free tier)**, with an upgrade path |
@@ -210,7 +210,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ### 7.1 Story record (data model)
 
 | Field | Required | Notes |
-|---|---|---|
+| --- | --- | --- |
 | `id` | ✓ | slug |
 | `company` | ✓ | |
 | `industry` | ✓ | Uses the Customers page industry filters |
@@ -226,7 +226,7 @@ The tool captures these inputs. Each one should be a structured field (pick-list
 ### 7.2 Seed stories (from source pages, 2026-09-24; **verify each before launch**)
 
 | Company | Industry | Use case | Headline | Product (as stated) | Source |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Eutelsat OneWeb | Aerospace/Space | Satellite telemetry | 15M unique series, 1M points/sec, 600+ LEO satellites | verify | `/customer/eutelsat` |
 | LeoLabs | Aerospace/Space | Orbit tracking | 25,000+ objects in LEO (27,000+ per 2026 blog post) | verify | `/customer/leolabs`, `/blog/inside-leo-labs-influxdb` |
 | Loft Orbital | Aerospace/Space | Satellite operations | Speed-to-space and reliability | InfluxDB + Telegraf | `/customer/loft-orbital` |
@@ -277,23 +277,25 @@ The Customers page lists **~280 stories**. The MVP ships with a curated, verifie
 ## 10. Sources
 
 Product:
-- https://www.influxdata.com/products/influxdb-overview/
-- https://www.influxdata.com/products/influxdb-cloud/serverless/
-- https://www.influxdata.com/products/influxdb-cloud/dedicated/
-- https://www.influxdata.com/products/telegraf-enterprise/
-- https://www.influxdata.com/time-series-platform/telegraf/
+
+- <https://www.influxdata.com/products/influxdb-overview/>
+- <https://www.influxdata.com/products/influxdb-cloud/serverless/>
+- <https://www.influxdata.com/products/influxdb-cloud/dedicated/>
+- <https://www.influxdata.com/products/telegraf-enterprise/>
+- <https://www.influxdata.com/time-series-platform/telegraf/>
 
 Customer stories:
-- https://www.influxdata.com/customers/
-- https://www.influxdata.com/partners/
-- https://www.influxdata.com/blog/ ("Use Cases" category)
+
+- <https://www.influxdata.com/customers/>
+- <https://www.influxdata.com/partners/>
+- <https://www.influxdata.com/blog/> ("Use Cases" category)
 
 ---
 
 ## 11. Open Questions
 
 | # | Question | Why it matters |
-|---|---|---|
+| --- | --- | --- |
 | OQ-1 | Who owns the decision rules and talk tracks (sales enablement? product marketing?), and who signs them off? | FR-REC-7, launch gate |
 | OQ-2 | Should the tool recommend **Amazon Timestream for InfluxDB**, or send AWS-first buyers to Serverless/Dedicated through AWS Marketplace? Should **InfluxDB 3 Core/Enterprise** be recommended even though the interview listed only the overview page for them? Is **InfluxDB Clustered** in scope? | Rule R5 and the catalog's completeness |
 | OQ-3 | CRM integration: Salesforce? Should the tool read account data or write call notes back? | Scope, auth, data handling |
