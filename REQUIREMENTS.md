@@ -11,7 +11,7 @@ The salesperson enters what the customer needs. The tool then:
 
 ## How it works
 
-1. **Ask the questions.** The tool walks the salesperson through a short list of questions to ask the customer.
+1. **Ask the questions.** The tool suggests which question to ask next, based on what the customer has said so far.
 2. **Enter the answers.** The salesperson types or picks the customer's answers.
 3. **Get the suggestion.** The tool names one product and explains why in a sentence or two.
 4. **Share a story.** The tool shows 1–3 customer stories from companies like this one, with links.
@@ -19,7 +19,15 @@ The salesperson enters what the customer needs. The tool then:
 
 ## Questions the tool asks
 
-The tool asks these questions in this order, from big picture down to timeline and budget.
+These are the questions the tool can ask. They are **not a fixed script**. The tool uses AI to pick the next question adaptively, based on what the customer has already said:
+
+- **Skip what's answered.** If the customer already said it, don't ask again.
+- **Follow the conversation.** If the customer jumps to budget or security, go there, then come back.
+- **Ask what matters most.** Put first the questions whose answers would change the product pick.
+- **Dig in when needed.** Ask a short follow-up if an answer is vague or opens a new need.
+- **Stop when ready.** Suggest a product once there's enough to pick one. Name any open questions.
+
+The groups below run roughly from big picture down to timeline and budget, but the order is a guide, not a rule.
 
 ### About the project
 
@@ -92,4 +100,5 @@ A few to start with:
 
 - Only InfluxData employees can use it (sign-in required).
 - It's quick and simple enough to use while talking to a customer.
+- The questions are non-linear. The tool uses AI to decide, adaptively, which question to ask next.
 - The follow-up email is a draft. The salesperson always reviews it before sending.
