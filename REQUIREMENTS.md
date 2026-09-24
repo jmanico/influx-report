@@ -19,12 +19,34 @@ The salesperson enters what the customer needs. The tool then:
 
 ## Questions the tool asks
 
-- What are you trying to do? (For example: monitor servers, collect sensor or IoT data, track equipment, real-time analytics.)
-- What industry are you in?
-- Do you want us to run it for you (cloud), or will you run it yourselves?
-- How much data do you have, and how fast is it growing?
-- Do you need your own private setup, or extra security like a private network connection?
-- Where does your data come from? (Servers, devices, apps.) How many machines do you collect it from?
+The tool asks these questions in this order, from big picture down to timeline and budget.
+
+### About the project
+
+1. What are you trying to do? (For example: monitor servers, collect sensor or IoT data, track equipment, real-time analytics.)
+2. What industry are you in?
+3. What's prompting this now? What isn't working today?
+
+### What they use today
+
+4. Are you using any open-source InfluxData products today, such as InfluxDB or Telegraf?
+5. Are you using any other time series or real-time database products? If so, which ones, and how is it going?
+
+### Their data
+
+6. How much data do you work with today (for example, data points per second or per day), and how fast is it growing?
+7. Where does your data come from (servers, devices, apps), and how many machines do you collect it from?
+
+### How they want to run it
+
+8. Do you want us to run it for you in the cloud, or will you run it yourselves?
+9. Do you need your own private setup, or extra security like a private network connection?
+
+### Timeline and budget
+
+10. Are you working toward a timeline or deadline?
+11. Is there budget set aside for this project?
+12. Who is championing this project, and who else is involved in the decision to buy?
 
 ## Products it can suggest
 
